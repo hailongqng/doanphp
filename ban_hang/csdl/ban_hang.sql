@@ -1,40 +1,41 @@
 -- phpMyAdmin SQL Dump
--- version 3.3.9
--- http://www.phpmyadmin.net
+-- version 5.0.3
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jan 23, 2016 at 04:51 CH
--- Server version: 5.5.8
--- PHP Version: 5.3.5
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th4 03, 2021 lúc 03:48 PM
+-- Phiên bản máy phục vụ: 10.4.14-MariaDB
+-- Phiên bản PHP: 7.2.34
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ban_hang`
+-- Cơ sở dữ liệu: `ban_hang`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `banner`
+-- Cấu trúc bảng cho bảng `banner`
 --
 
-CREATE TABLE IF NOT EXISTS `banner` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `banner` (
+  `id` int(11) NOT NULL,
   `hinh` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
   `rong` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
-  `cao` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+  `cao` varchar(256) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `banner`
+-- Đang đổ dữ liệu cho bảng `banner`
 --
 
 INSERT INTO `banner` (`id`, `hinh`, `rong`, `cao`) VALUES
@@ -43,58 +44,57 @@ INSERT INTO `banner` (`id`, `hinh`, `rong`, `cao`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `footer`
+-- Cấu trúc bảng cho bảng `footer`
 --
 
-CREATE TABLE IF NOT EXISTS `footer` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `html` mediumtext COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+CREATE TABLE `footer` (
+  `id` int(11) NOT NULL,
+  `html` mediumtext COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `footer`
+-- Đang đổ dữ liệu cho bảng `footer`
 --
 
 INSERT INTO `footer` (`id`, `html`) VALUES
-(1, '<table width="990px">\r\n<tbody>\r\n<tr>\r\n<td align="right" width="495px">Cửa h&agrave;ng :</td>\r\n<td width="495px">Shop abc <strong>mới</strong></td>\r\n</tr>\r\n<tr>\r\n<td align="right">Điện thoại :</td>\r\n<td>so_dien_thoai_<strong>moi</strong></td>\r\n</tr>\r\n<tr>\r\n<td align="right">Địa chỉ :</td>\r\n<td>dia_chi_<strong>moi</strong></td>\r\n</tr>\r\n</tbody>\r\n</table>');
+(1, '<table width=\"990px\">\r\n<tbody>\r\n<tr>\r\n<td align=\"right\" width=\"495px\">Cửa h&agrave;ng :</td>\r\n<td width=\"495px\">Shop abc <strong>mới</strong></td>\r\n</tr>\r\n<tr>\r\n<td align=\"right\">Điện thoại :</td>\r\n<td>so_dien_thoai_<strong>moi</strong></td>\r\n</tr>\r\n<tr>\r\n<td align=\"right\">Địa chỉ :</td>\r\n<td>dia_chi_<strong>moi</strong></td>\r\n</tr>\r\n</tbody>\r\n</table>');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hoa_don`
+-- Cấu trúc bảng cho bảng `hoa_don`
 --
 
-CREATE TABLE IF NOT EXISTS `hoa_don` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `hoa_don` (
+  `id` int(11) NOT NULL,
   `ten_nguoi_mua` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
   `dia_chi` mediumtext COLLATE utf8_unicode_ci NOT NULL,
   `dien_thoai` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
   `noi_dung` mediumtext COLLATE utf8_unicode_ci NOT NULL,
-  `hang_duoc_mua` mediumtext COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+  `hang_duoc_mua` mediumtext COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `hoa_don`
+-- Đang đổ dữ liệu cho bảng `hoa_don`
 --
 
+INSERT INTO `hoa_don` (`id`, `ten_nguoi_mua`, `email`, `dia_chi`, `dien_thoai`, `noi_dung`, `hang_duoc_mua`) VALUES
+(1, 'HaiLong', 'kianhcr7@gmail.com', 'asdasdas', '0981713770', 'kasdashdasd', '12[|||]2[|||||]');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `menu_doc`
+-- Cấu trúc bảng cho bảng `menu_doc`
 --
 
-CREATE TABLE IF NOT EXISTS `menu_doc` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `ten` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=9 ;
+CREATE TABLE `menu_doc` (
+  `id` int(11) NOT NULL,
+  `ten` varchar(256) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `menu_doc`
+-- Đang đổ dữ liệu cho bảng `menu_doc`
 --
 
 INSERT INTO `menu_doc` (`id`, `ten`) VALUES
@@ -102,7 +102,7 @@ INSERT INTO `menu_doc` (`id`, `ten`) VALUES
 (2, 'Menu 2'),
 (3, 'Menu 3'),
 (4, 'Menu 4'),
-(5, 'Menu 5a'),
+(5, 'Menu 5'),
 (6, 'Menu 6'),
 (7, 'Menu 7'),
 (8, 'Menu 8');
@@ -110,19 +110,18 @@ INSERT INTO `menu_doc` (`id`, `ten`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `menu_ngang`
+-- Cấu trúc bảng cho bảng `menu_ngang`
 --
 
-CREATE TABLE IF NOT EXISTS `menu_ngang` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `menu_ngang` (
+  `id` int(11) NOT NULL,
   `ten` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
   `noi_dung` mediumtext COLLATE utf8_unicode_ci NOT NULL,
-  `loai_menu` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
+  `loai_menu` varchar(256) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `menu_ngang`
+-- Đang đổ dữ liệu cho bảng `menu_ngang`
 --
 
 INSERT INTO `menu_ngang` (`id`, `ten`, `noi_dung`, `loai_menu`) VALUES
@@ -135,32 +134,31 @@ INSERT INTO `menu_ngang` (`id`, `ten`, `noi_dung`, `loai_menu`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `quang_cao`
+-- Cấu trúc bảng cho bảng `quang_cao`
 --
 
-CREATE TABLE IF NOT EXISTS `quang_cao` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `quang_cao` (
+  `id` int(11) NOT NULL,
   `html` mediumtext COLLATE utf8_unicode_ci NOT NULL,
-  `vi_tri` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+  `vi_tri` varchar(256) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `quang_cao`
+-- Đang đổ dữ liệu cho bảng `quang_cao`
 --
 
 INSERT INTO `quang_cao` (`id`, `html`, `vi_tri`) VALUES
-(1, '<p><a href="#"><img style="display: block; margin-left: auto; margin-right: auto;" src="/ban_hang/hinh_anh/tinymce/qc_p_1.png" alt="" /></a></p>\r\n<p style="text-align: center;"><a href="#"><img src="/ban_hang/hinh_anh/tinymce/qc_p_2.png" alt="" /></a></p>\r\n<p><a href="#"><img style="display: block; margin-left: auto; margin-right: auto;" src="/ban_hang/hinh_anh/tinymce/qc_p_3.png" alt="" /></a></p>', 'trai'),
-(2, '<p><a href="#"><img style="display: block; margin-left: auto; margin-right: auto;" src="/ban_hang/hinh_anh/tinymce/qc_t_1.png" alt="" /></a></p>\r\n<p style="text-align: center;"><a href="#"><img src="/ban_hang/hinh_anh/tinymce/qc_t_2.png" alt="" /></a></p>\r\n<p><a href="#"><img style="display: block; margin-left: auto; margin-right: auto;" src="/ban_hang/hinh_anh/tinymce/qc_t_3.png" alt="" /></a></p>', 'phai');
+(1, '<p><a href=\"#\"><img style=\"display: block; margin-left: auto; margin-right: auto;\" src=\"/ban_hang/hinh_anh/tinymce/qc_p_1.png\" alt=\"\" /></a></p>\r\n<p style=\"text-align: center;\"><a href=\"#\"><img src=\"/ban_hang/hinh_anh/tinymce/qc_p_2.png\" alt=\"\" /></a></p>\r\n<p><a href=\"#\"><img style=\"display: block; margin-left: auto; margin-right: auto;\" src=\"/ban_hang/hinh_anh/tinymce/qc_p_3.png\" alt=\"\" /></a></p>', 'trai'),
+(2, '<p><a href=\"#\"><img style=\"display: block; margin-left: auto; margin-right: auto;\" src=\"/ban_hang/hinh_anh/tinymce/qc_t_1.png\" alt=\"\" /></a></p>\r\n<p style=\"text-align: center;\"><a href=\"#\"><img src=\"/ban_hang/hinh_anh/tinymce/qc_t_2.png\" alt=\"\" /></a></p>\r\n<p><a href=\"#\"><img style=\"display: block; margin-left: auto; margin-right: auto;\" src=\"/ban_hang/hinh_anh/tinymce/qc_t_3.png\" alt=\"\" /></a></p>', 'phai');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `san_pham`
+-- Cấu trúc bảng cho bảng `san_pham`
 --
 
-CREATE TABLE IF NOT EXISTS `san_pham` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `san_pham` (
+  `id` int(11) NOT NULL,
   `ten` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
   `gia` int(255) NOT NULL,
   `hinh_anh` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
@@ -168,12 +166,11 @@ CREATE TABLE IF NOT EXISTS `san_pham` (
   `thuoc_menu` int(255) NOT NULL,
   `noi_bat` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
   `trang_chu` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
-  `sap_xep_trang_chu` int(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=41 ;
+  `sap_xep_trang_chu` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `san_pham`
+-- Đang đổ dữ liệu cho bảng `san_pham`
 --
 
 INSERT INTO `san_pham` (`id`, `ten`, `gia`, `hinh_anh`, `noi_dung`, `thuoc_menu`, `noi_bat`, `trang_chu`, `sap_xep_trang_chu`) VALUES
@@ -221,18 +218,17 @@ INSERT INTO `san_pham` (`id`, `ten`, `gia`, `hinh_anh`, `noi_dung`, `thuoc_menu`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `slideshow`
+-- Cấu trúc bảng cho bảng `slideshow`
 --
 
-CREATE TABLE IF NOT EXISTS `slideshow` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `slideshow` (
+  `id` int(11) NOT NULL,
   `hinh` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
-  `lien_ket` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+  `lien_ket` varchar(256) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `slideshow`
+-- Đang đổ dữ liệu cho bảng `slideshow`
 --
 
 INSERT INTO `slideshow` (`id`, `hinh`, `lien_ket`) VALUES
@@ -244,19 +240,140 @@ INSERT INTO `slideshow` (`id`, `hinh`, `lien_ket`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `thong_tin_quan_tri`
+-- Cấu trúc bảng cho bảng `thong_tin_quan_tri`
 --
 
-CREATE TABLE IF NOT EXISTS `thong_tin_quan_tri` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `thong_tin_quan_tri` (
+  `id` int(11) NOT NULL,
   `ky_danh` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
-  `mat_khau` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+  `mat_khau` varchar(256) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `thong_tin_quan_tri`
+-- Đang đổ dữ liệu cho bảng `thong_tin_quan_tri`
 --
 
 INSERT INTO `thong_tin_quan_tri` (`id`, `ky_danh`, `mat_khau`) VALUES
-(1, 'admin', 'c3284d0f94606de1fd2af172aba15bf3');
+(1, 'admin', 'c3284d0f94606de1fd2af172aba15bf3'),
+(2, 'hailongqng', '14e1b600b1fd579f47433b88e8d85291');
+
+--
+-- Chỉ mục cho các bảng đã đổ
+--
+
+--
+-- Chỉ mục cho bảng `banner`
+--
+ALTER TABLE `banner`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `footer`
+--
+ALTER TABLE `footer`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `hoa_don`
+--
+ALTER TABLE `hoa_don`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `menu_doc`
+--
+ALTER TABLE `menu_doc`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `menu_ngang`
+--
+ALTER TABLE `menu_ngang`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `quang_cao`
+--
+ALTER TABLE `quang_cao`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `san_pham`
+--
+ALTER TABLE `san_pham`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `slideshow`
+--
+ALTER TABLE `slideshow`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `thong_tin_quan_tri`
+--
+ALTER TABLE `thong_tin_quan_tri`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT cho các bảng đã đổ
+--
+
+--
+-- AUTO_INCREMENT cho bảng `banner`
+--
+ALTER TABLE `banner`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT cho bảng `footer`
+--
+ALTER TABLE `footer`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT cho bảng `hoa_don`
+--
+ALTER TABLE `hoa_don`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT cho bảng `menu_doc`
+--
+ALTER TABLE `menu_doc`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT cho bảng `menu_ngang`
+--
+ALTER TABLE `menu_ngang`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT cho bảng `quang_cao`
+--
+ALTER TABLE `quang_cao`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT cho bảng `san_pham`
+--
+ALTER TABLE `san_pham`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+
+--
+-- AUTO_INCREMENT cho bảng `slideshow`
+--
+ALTER TABLE `slideshow`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT cho bảng `thong_tin_quan_tri`
+--
+ALTER TABLE `thong_tin_quan_tri`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
